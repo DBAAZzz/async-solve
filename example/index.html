@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试</title>
+</head>
+<style>
+  .button {
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
+<body>
+  <button onclick="setName()">设置name值</button>
+  <button onclick="setAge()">设置age的值</button>
+</body>
+
+<script src="../dist/index.js"></script>
+<script>
+  let asyncBus = new asyncScheme()
+  asyncBus.addKey('age', 'name')
+
+  asyncBus.execAsyncFn('age', (res) => {
+    console.log("age的值已经能拿到了", res)
+  })
+
+  asyncBus.execAsyncFn('name', (res) => {
+    console.log("name的值已经能拿到了", res)
+  })
+
+  asyncBus.execAsyncFn(['age', 'name'], (res) => {
+    console.log("age和name的值都能拿到了", res)
+  })
+
+  function setName() {
+    asyncBus.setKeyValue('name', 200)
+  }
+
+  function setAge() {
+    asyncBus.setKeyValue('age', 100)
+  }
+
+</script>
+
+</html>
