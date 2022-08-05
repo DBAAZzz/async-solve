@@ -1,6 +1,6 @@
 {
   "name": "async-solve",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "异步依赖解决方案",
   "main": "dist/index.js",
   "scripts": {
@@ -21,10 +21,10 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
-    "@rollup/plugin-typescript": "^8.3.2",
     "rollup": "^2.72.1",
+    "rollup-plugin-typescript2": "^0.32.1",
     "rollup-plugin-uglify": "^6.0.4",
     "tslib": "^2.4.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.7.4"
   }
 }

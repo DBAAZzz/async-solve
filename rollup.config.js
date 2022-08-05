@@ -1,8 +1,8 @@
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from '@rollup/plugin-typescript';
 import babel from "@rollup/plugin-babel";
-import { uglify } from 'rollup-plugin-uglify';
-
+import { uglify } from "rollup-plugin-uglify";
+import path from "path";
+import typescript from 'rollup-plugin-typescript2';
 
 module.exports = [
   {
@@ -18,7 +18,9 @@ module.exports = [
         babelHelpers: 'runtime',
         exclude: '**/node_modules/**',
       }),
-      typescript(),
+      typescript({
+        tsconfig: path.resolve(__dirname, "./tsconfig.json")
+      }),
       uglify()
     ],
   },
