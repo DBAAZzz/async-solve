@@ -1,6 +1,6 @@
 {
   "name": "async-solve",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "异步依赖解决方案",
   "main": "dist/index.js",
   "scripts": {

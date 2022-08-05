@@ -25,14 +25,13 @@ export default class AsyncScheme {
     return new Promise((resolve, reject) => {
       trunkPromiseStatus[key] = 'pending'
       trunkPromise[key] = resolve
-
     })
   }
 
   /**
- * 添加要监听的 key 值
- * @param {String | Array} key 
- */
+   * 添加要监听的 key 值
+   * @param {String | Array} key 
+   */
   addKey = function (key: string | Array<string>,
     // @ts-ignore
     ...args) {
@@ -67,6 +66,12 @@ export default class AsyncScheme {
     }
   }
 
+  /**
+   * 设置指定 key 的 value
+   * @param key 
+   * @param value 
+   * @returns 
+   */
   setKeyValue(key: string, value: any) {
     if (!trunkPromise.hasOwnProperty(key)) {
       console.error(`【setKeyValue】：该 key: ${key} 没有注册，请检查 key 值`)
@@ -84,6 +89,11 @@ export default class AsyncScheme {
     }
   }
 
+  /**
+   * 当监听的 key 值发生变化时，执行回调函数
+   * @param key 
+   * @param cb 
+   */
   execAsyncFn(key: string | Array<string>, cb: Function) {
     if (Array.isArray(key)) {
       let noExistKey = isSubset(key, Object.keys(trunk))
