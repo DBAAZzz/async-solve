@@ -74,8 +74,7 @@ export default class AsyncScheme {
    */
   setKeyValue(key: string, value: any) {
     if (!trunkPromise.hasOwnProperty(key)) {
-      console.error(`【setKeyValue】：该 key: ${key} 没有注册，请检查 key 值`)
-      return
+      throw new Error(`【setKeyValue】：该 key: ${key} 没有注册，请检查 key 值`)
     }
     if (trunkPromise[key]) {
       if (trunkPromiseStatus[key] == 'pending') {
