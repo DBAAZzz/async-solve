@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "declaration": false, // 生成相应的 .d.ts文件。
+    "declaration": true, // 生成相应的 .d.ts文件。
     "sourceMap": false,
     "skipLibCheck": true,
     "outDir": "dist/"
