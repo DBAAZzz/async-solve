@@ -1,6 +1,6 @@
 {
   "name": "async-solve",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "异步依赖解决方案",
   "main": "dist/index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   "keywords": [
     "async"
   ],
+  "types": "dist/index.d.ts",
   "author": "DBAAZzz",
   "license": "ISC",
   "devDependencies": {
@@ -35,6 +36,7 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.6"
+    "@babel/runtime": "^7.20.6",
+    "create-react-app": "^5.0.1"
   }
 }
